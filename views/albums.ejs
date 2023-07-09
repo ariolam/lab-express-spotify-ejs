@@ -1,0 +1,20 @@
+<div class="container">
+  <h1> Albums</h1>
+  <div class="row">
+    <% albums.forEach((album) => { %>
+    <div class="col-md-4">
+      <div class="card">
+        <% if (album.images[0]) { %>
+        <img class="card-img-top" src="<%= album.images[0].url %>" alt="<%= album.name %>" />
+        <%} else { %>
+        <p> Image not available </p>
+        <% } %>
+        <div class="card-body">
+          <h5 class="card-title"><%= album.name %></h5>
+          <a href="/tracks/<%= album.id %>">View Tracks</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
